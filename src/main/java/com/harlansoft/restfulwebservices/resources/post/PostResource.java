@@ -19,7 +19,7 @@ public class PostResource {
 	@GetMapping("/users/{id}/posts")
 	public List<Post> retrieveAllPostsByUser(@PathVariable Integer userId) {
 		List<Post> posts = postService.findByUserId(userId);
-		
+		return posts;
 	}
 	
 }
