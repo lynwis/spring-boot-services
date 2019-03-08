@@ -6,6 +6,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -33,5 +35,11 @@ public class User {
 	@Past
 	@ApiModelProperty(notes = "Birthdate should be past")
 	private Date birthDate;
+	
+//	STATIC FILTERING
+//	as an alternative, you can put @JsonIgnoreProperties on the class
+//	and specify the fields you don't want to be serialized in json
+	@JsonIgnore
+	private String shouldNotShowUp;
 	
 }

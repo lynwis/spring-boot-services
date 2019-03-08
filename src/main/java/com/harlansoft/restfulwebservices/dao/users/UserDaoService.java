@@ -14,7 +14,7 @@ public class UserDaoService {
 	private static List<User> users = new ArrayList<>();
 	private static int userCount;
 	static {
-		users.add(new User(1, "Adam", new Date()));
+		users.add(new User(1, "Adam", new Date(), "secret"));
 		userCount = 1;
 	}
 	
